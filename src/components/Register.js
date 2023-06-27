@@ -14,10 +14,11 @@ const Register = () => {
       body: JSON.stringify({ email, password })
     };
 
-    fetch('http://localhost:3000/API/Register', requestOptions)
+    fetch('https://nodejs-mongodb-auth-app.herokuapp.com/register', requestOptions)
       .then((response) => {
         if (response.ok) {
           setRegister(true);
+          alert(`${email} is registered successfully!`)
         } else {
           throw new Error('Registration failed.');
         }
